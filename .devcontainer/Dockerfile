@@ -19,5 +19,14 @@ RUN apt-get update && \
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# Copy the Apache configuration file from the host to the container
+COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
+
+# Change the ownership of the public folder to www-data (Apache user)
+RUN mkdir -p /var/www/html/public && chown -R www-data:www-data /var/www/html/public
+
+# Enable the new configuration and restart Apache
+RUN a2ensite 000-default && service apache2 restart
+
 # Set working directory
 WORKDIR /var/www/html
