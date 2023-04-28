@@ -1,5 +1,5 @@
 {
-    "name": "PHP 7.1, Composer, MySQL, phpMyAdmin, Apache2",
+    "name": "PHP 8.1, Composer, MySQL, phpMyAdmin, Apache2",
     "dockerComposeFile": "docker-compose.yml",
     "service": "app",
     "workspaceFolder": "/var/www/html",

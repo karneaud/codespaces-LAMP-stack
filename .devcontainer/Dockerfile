@@ -1,4 +1,5 @@
-FROM php:7.1-apache
+# Use PHP 8.1 with Apache
+FROM php:8.1-apache
 
 # Install necessary packages and PHP extensions
 RUN apt-get update && \
@@ -11,7 +12,7 @@ RUN apt-get update && \
         unzip \
         git \
         mariadb-client && \
-    docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
+    docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ && \
     docker-php-ext-install gd pdo_mysql zip mysqli && \
     a2enmod rewrite
 
