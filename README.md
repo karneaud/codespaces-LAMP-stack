@@ -1,1 +1,0 @@
-# Github codespaces lamp stack

@@ -1,0 +1,11 @@
+{
+    "name": "PHP 7.1, Composer, MySQL, phpMyAdmin, Apache2",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/var/www/html",
+    "forwardPorts": [8080, 8081],
+    "customizations": {
+        "vscode/settings": "customizations/vscode/settings.json",
+        "vscode/extensions": "customizations/vscode/extensions.json"
+    }
+}
